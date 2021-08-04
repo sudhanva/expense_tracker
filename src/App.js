@@ -3,7 +3,6 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import "./App.css";
 
-
 function App() {
   const expenses = [
     {
@@ -26,9 +25,14 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const mainData = (expense) => {
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense getDatafromNewExpense={mainData} />
       <Expenses items={expenses}></Expenses>
     </div>
   );
