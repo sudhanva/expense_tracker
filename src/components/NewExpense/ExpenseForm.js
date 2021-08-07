@@ -26,7 +26,7 @@ const ExpenseForm = (props) => {
     const expense = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: enteredDate,
+      date: new Date(enteredDate)
     };
 
     props.getDatafromForm(expense);
@@ -63,6 +63,8 @@ const ExpenseForm = (props) => {
               type="date"
               onChange={dateChangeHandler}
               value={enteredDate}
+              min="2019-01-01"
+              max="2022-12-31"
             />
           </div>
         </div>
